@@ -1,10 +1,18 @@
 .container {
-  padding: 0 0.5rem;
+  text-align: center;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 100%;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#e66465),
+    to(#9198e5)
+  );
+  background: linear-gradient(#e66465, #9198e5);
 }
 
 @media (max-width: 600px) {
