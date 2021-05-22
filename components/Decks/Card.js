@@ -1,11 +1,8 @@
 import React from "react";
 
-function Card() {
+function Card({ picture }) {
   return (
-    <div
-      className="card"
-      style={{ backgroundImage: "url(./images/profile.jpg)" }}
-    ></div>
+    <div className="card" style={{ backgroundImage: `url(${picture})` }}></div>
   );
 }
 
