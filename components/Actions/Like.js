@@ -1,6 +1,6 @@
 import React from "react";
 
-function Like() {
+function Like({}) {
   return (
     <div>
       <button>

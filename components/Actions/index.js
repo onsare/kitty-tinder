@@ -4,7 +4,7 @@ import Like from "./Like";
 import Rewind from "./Rewind";
 import Superlike from "./Superlike";
 
-function Actions() {
+function Actions({}) {
   return (
     <div className="actions">
       <Rewind />

@@ -1,6 +1,6 @@
 import React from "react";
 
-function Dislike() {
+function Dislike({}) {
   return (
     <div>
       <button>
