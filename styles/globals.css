@@ -48,6 +48,8 @@ a {
   width: 500px;
   max-width: 70vw;
   margin-top: 40px;
+  position: fixed;
+  bottom: 25px;
 }
 
 .actions img {
@@ -66,4 +68,11 @@ a {
   margin-top: 40px;
   background-size: cover;
   background-position: center;
+}
+.swipe {
+  position: absolute;
+}
+.decks {
+  display: flex;
+  justify-content: center;
 }
