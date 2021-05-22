@@ -1,7 +1,12 @@
 import React from "react";
+import Card from "./Card";
 
 function Decks() {
-  return <div>cards</div>;
+  return (
+    <div className="decks">
+      <Card />
+    </div>
+  );
 }
 
 export default Decks;
