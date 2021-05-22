@@ -9,7 +9,7 @@ function Layout({ children }) {
       <Head>
         <title>Cat Love</title>
         <meta name="description" content="Tinder for cats" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/icons/logo.png" />
       </Head>
       <Header />
       {children}
