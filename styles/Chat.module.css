@@ -1,0 +1,26 @@
+.avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  margin-right: 20px;
+}
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.messages {
+  line-height: 10px;
+}
+.chat {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #fbfafa;
+  padding: 0 15px;
+  cursor: pointer;
+}
+.timestamp {
+  color: lightgray;
+}
