@@ -1,9 +1,9 @@
 import React from "react";
 
-function Dislike({}) {
+function Dislike({ swipe }) {
   return (
     <div>
-      <button>
+      <button onClick={() => swipe("left")}>
         <img src="/icons/dislike.png" alt="dislike user" />
       </button>
     </div>

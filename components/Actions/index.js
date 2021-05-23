@@ -4,12 +4,12 @@ import Like from "./Like";
 import Rewind from "./Rewind";
 import Superlike from "./Superlike";
 
-function Actions({}) {
+function Actions({ swipe }) {
   return (
     <div className="actions">
       <Rewind />
-      <Dislike />
-      <Like />
+      <Dislike swipe={swipe} />
+      <Like swipe={swipe} />
       <Superlike />
     </div>
   );

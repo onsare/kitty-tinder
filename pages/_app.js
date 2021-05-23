@@ -30,8 +30,6 @@ function MyApp({ Component, pageProps }) {
     []
   );
 
-  console.log(likedUsers);
-
   useEffect(async () => {
     setLoading(true);
     const res = await fetch(API_URL, {

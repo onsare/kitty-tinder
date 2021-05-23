@@ -2,7 +2,6 @@ import { useContext } from "react";
 
 import styles from "../styles/Home.module.css";
 import Decks from "../components/Decks";
-import UserActions from "../components/Actions";
 
 import { AppContext } from "../context/AppContext";
 import { API_URL, API_KEY } from "../lib";
@@ -13,8 +12,6 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Decks data={appContext.kittys} />
-
-      <UserActions />
     </div>
   );
 }

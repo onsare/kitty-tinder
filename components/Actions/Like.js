@@ -1,9 +1,9 @@
 import React from "react";
 
-function Like({}) {
+function Like({ swipe }) {
   return (
     <div>
-      <button>
+      <button onClick={() => swipe("right")}>
         <img src="/icons/like.png" alt="like user" />
       </button>
     </div>
