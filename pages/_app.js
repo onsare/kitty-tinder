@@ -1,16 +1,41 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import "../styles/globals.css";
 
 import Layout from "../components/Layout";
 
 import { AppContext } from "../context/AppContext";
+import { API_URL, API_KEY } from "../lib";
 
 function MyApp({ Component, pageProps }) {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({
+    id: 1,
+    name: "Mr. Miagi",
+    age: 2,
+    bio: "My name is cat but my friend call me Mr. Miagi",
+    avatar: "https://cdn2.thecatapi.com/images/hjPYxZKIu.jpg",
+  });
+  const [kittys, setKittys] = useState(null);
+
+  useEffect(async () => {
+    const res = await fetch(API_URL, {
+      method: "GET",
+      headers: {
+        "X-API-KEY": API_KEY,
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = await res.json();
+
+    setKittys(data);
+  }, []);
 
   return (
-    <AppContext.Provider value={{ isAuthenticated: !!user, user, setUser }}>
+    <AppContext.Provider
+      value={{ isAuthenticated: !!user, user, setUser, kittys }}
+    >
       <Layout>
         <Component {...pageProps} />
       </Layout>
