@@ -14,7 +14,7 @@ V 1.0.0
 
 ## Live
 
-- [Start page](https://kitty-tinder.vercel.app/)
+- [Demo site](https://kitty-tinder.vercel.app/)
 
 ## Quick start
 
