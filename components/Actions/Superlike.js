@@ -3,7 +3,7 @@ import React from "react";
 function Superlike() {
   return (
     <div>
-      <button>
+      <button id="superlike">
         <img src="/icons/superlike.png" alt="superlike user" />
       </button>
     </div>

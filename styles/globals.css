@@ -36,6 +36,10 @@ a {
   width: 40px;
   margin: 15px;
 }
+.actions #rewind,
+#superlike {
+  cursor: no-drop;
+}
 .actions button {
   border: 0;
   cursor: pointer;
