@@ -5,31 +5,56 @@ import styles from "../styles/Profile.module.css";
 import { AppContext } from "../context/AppContext";
 
 function profile() {
-  const userContext = useContext(AppContext);
+  const { user, likedUsers, disLikedUsers } = useContext(AppContext);
 
   return (
     <div className={styles.page}>
       <div className={styles.container}>
         <div className={styles.avatar}>
-          <img src={userContext.user.avatar} alt="user avatar" />
+          <img src={user.avatar} alt="user avatar" />
         </div>
         <div className={styles.name}>
           <h1>
-            {userContext.user.name},{userContext.user.age}
+            {user.name},{user.age}
           </h1>
-          <p>{userContext.user.bio}</p>
+          <p>{user.bio}</p>
+        </div>
+        <div>
+          <h3>You Liked the following kittys</h3>
         </div>
         <div className={styles.misc}>
-          <div className={styles.block}></div>
-          <div className={styles.block}></div>
-          <div className={styles.block}></div>
-          <div className={styles.block}></div>
+          {likedUsers.map((user) => (
+            <div
+              className={styles.block}
+              style={{
+                backgroundImage: `url(${user.url})`,
+                color: "white",
+                fontWeight: "bold",
+                fontFamily: "cursive",
+              }}
+            >
+              {user.id}
+            </div>
+          ))}
+        </div>
+
+        <div>
+          <h3>You Disliked the following kittys</h3>
         </div>
         <div className={styles.misc}>
-          <div className={styles.block}></div>
-          <div className={styles.block}></div>
-          <div className={styles.block}></div>
-          <div className={styles.block}></div>
+          {disLikedUsers.map((user) => (
+            <div
+              className={styles.block}
+              style={{
+                backgroundImage: `url(${user.url})`,
+                color: "white",
+                fontWeight: "bold",
+                fontFamily: "cursive",
+              }}
+            >
+              {user.id}
+            </div>
+          ))}
         </div>
       </div>
     </div>

@@ -60,6 +60,8 @@ function MyApp({ Component, pageProps }) {
         setDisliked,
         setLikedUsersToLocalStorage,
         setDisLikedUsersToLocalStorage,
+        likedUsers,
+        disLikedUsers,
       }}
     >
       <Layout>

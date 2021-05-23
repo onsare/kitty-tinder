@@ -23,6 +23,7 @@
 }
 .misc {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 20px;
 }
@@ -32,4 +33,5 @@
   height: 200px;
   background: lightgray;
   border-radius: 20px;
+  margin: 5px;
 }
