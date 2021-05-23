@@ -5,13 +5,15 @@ import Decks from "../components/Decks";
 import UserActions from "../components/Actions";
 
 import { AppContext } from "../context/AppContext";
+import { API_URL, API_KEY } from "../lib";
 
 export default function Home() {
   const appContext = useContext(AppContext);
-
+  if (appContext.kittys === null) return <h1>Loading...</h1>;
   return (
     <div className={styles.container}>
       <Decks data={appContext.kittys} />
+
       <UserActions />
     </div>
   );

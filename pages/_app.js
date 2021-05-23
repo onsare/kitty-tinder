@@ -12,12 +12,14 @@ function MyApp({ Component, pageProps }) {
     id: 1,
     name: "Mr. Miagi",
     age: 2,
-    bio: "My name is cat but my friend call me Mr. Miagi",
+    bio: "My name is cat but my friends call me Mr. Miagi",
     avatar: "https://cdn2.thecatapi.com/images/hjPYxZKIu.jpg",
   });
   const [kittys, setKittys] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(async () => {
+    setLoading(true);
     const res = await fetch(API_URL, {
       method: "GET",
       headers: {
@@ -30,11 +32,17 @@ function MyApp({ Component, pageProps }) {
     const data = await res.json();
 
     setKittys(data);
+    setLoading(false);
   }, []);
 
   return (
     <AppContext.Provider
-      value={{ isAuthenticated: !!user, user, setUser, kittys }}
+      value={{
+        isAuthenticated: !!user,
+        user,
+        kittys,
+        loading,
+      }}
     >
       <Layout>
         <Component {...pageProps} />
