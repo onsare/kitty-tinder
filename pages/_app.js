@@ -17,6 +17,8 @@ function MyApp({ Component, pageProps }) {
   });
   const [kittys, setKittys] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [liked, setLiked] = useState([]);
+  const [disliked, setDisliked] = useState([]);
 
   useEffect(async () => {
     setLoading(true);
@@ -42,6 +44,10 @@ function MyApp({ Component, pageProps }) {
         user,
         kittys,
         loading,
+        liked,
+        setLiked,
+        disliked,
+        setDisliked,
       }}
     >
       <Layout>
