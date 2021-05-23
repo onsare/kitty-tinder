@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import useLocalStorage from "../utils/useLocalStorareHook";
 
 import "../styles/globals.css";
 
@@ -19,6 +20,17 @@ function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(false);
   const [liked, setLiked] = useState([]);
   const [disliked, setDisliked] = useState([]);
+  //first arg is key to the value in local storage
+  const [likedUsers, setLikedUsersToLocalStorage] = useLocalStorage(
+    "likedUsers",
+    []
+  );
+  const [disLikedUsers, setDisLikedUsersToLocalStorage] = useLocalStorage(
+    "dislikedUsers",
+    []
+  );
+
+  console.log(likedUsers);
 
   useEffect(async () => {
     setLoading(true);
@@ -48,6 +60,8 @@ function MyApp({ Component, pageProps }) {
         setLiked,
         disliked,
         setDisliked,
+        setLikedUsersToLocalStorage,
+        setDisLikedUsersToLocalStorage,
       }}
     >
       <Layout>

@@ -1,4 +1,3 @@
-import React, { useState, useMemo } from "react";
 import { useContext } from "react";
 
 import Card from "./Card";
@@ -9,7 +8,12 @@ import { AppContext } from "../../context/AppContext";
 function Decks({ data }) {
   const likedUsers = [];
   const dislikedUsers = [];
-  const { setLiked, setDisliked } = useContext(AppContext);
+  const {
+    setLiked,
+    setDisliked,
+    setDisLikedUsersToLocalStorage,
+    setLikedUsersToLocalStorage,
+  } = useContext(AppContext);
 
   const onCardLeftScreen = (myIdentifier) => {
     console.log(myIdentifier + " left the screen");
@@ -19,9 +23,11 @@ function Decks({ data }) {
     if (direction === "right") {
       likedUsers.push(cat);
       setLiked([...likedUsers, cat]);
+      setLikedUsersToLocalStorage([...likedUsers, cat]);
     } else {
       dislikedUsers.push(cat);
       setDisliked([...dislikedUsers, cat]);
+      setDisLikedUsersToLocalStorage([...dislikedUsers, cat]);
     }
   };
 
