@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from "react";
+import React, { useState, useContext, useMemo } from "react";
 
 import Card from "./Card";
 import TinderCard from "react-tinder-card";
@@ -11,6 +11,7 @@ const alreadyRemoved = [];
 function Decks({ data }) {
   const likedUsers = [];
   const dislikedUsers = [];
+
   const {
     setLiked,
     setDisliked,
@@ -29,13 +30,16 @@ function Decks({ data }) {
   const onCardLeftScreen = (direction, cat) => {
     if (direction === "right") {
       likedUsers.push(cat);
-      setLiked([...likedUsers, cat]);
-      setLikedUsersToLocalStorage([...likedUsers, cat]);
+      setLiked([...likedUsers]);
+      setLikedUsersToLocalStorage([...likedUsers]);
     } else {
       dislikedUsers.push(cat);
-      setDisliked([...dislikedUsers, cat]);
-      setDisLikedUsersToLocalStorage([...dislikedUsers, cat]);
+      setDisliked([...dislikedUsers]);
+      setDisLikedUsersToLocalStorage([...dislikedUsers]);
     }
+
+    // usersState = usersState.filter((users) => users.id !== cat.id);
+    // setUsers(usersState);
   };
 
   const swiped = (direction, cat) => {

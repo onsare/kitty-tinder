@@ -25,12 +25,15 @@ function profile() {
         <div className={styles.misc}>
           {likedUsers.map((user) => (
             <div
+              key={user.id}
               className={styles.block}
               style={{
                 backgroundImage: `url(${user.url})`,
                 color: "white",
                 fontWeight: "bold",
                 fontFamily: "cursive",
+                backgroundPosition: "center",
+                backgroundSize: "cover",
               }}
             >
               {user.id}
@@ -44,6 +47,7 @@ function profile() {
         <div className={styles.misc}>
           {disLikedUsers.map((user) => (
             <div
+              key={user.id}
               className={styles.block}
               style={{
                 backgroundImage: `url(${user.url})`,
